@@ -92,7 +92,7 @@
                     }
 
                     $cfCreato .= substr($ConsonantCognome, 0, 3);
-                    $cfCreato .= $ConsonantNome;
+                    $cfCreato .= substr($ConsonantNome, 0, 3);
                     $cfCreato .= substr($born, 2, 2);
 
                     if (substr($born, 5, 2) == "01") {
@@ -158,6 +158,12 @@
                     $somma = $lettere[$somma];
                     $cfCreato .= $somma;
                     echo $cfCreato; 
+
+                    if ($cfCreato == $CF) {
+                        echo "Il codice fiscale è corretto";
+                    } else {
+                        echo "Il codice fiscale è errato";
+                    }
 
 
                 }
