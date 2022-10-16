@@ -142,27 +142,31 @@
 
                     $lettere = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
                     $valorePari = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-                    $valoreDispari = ["1", "0", "5", "7", "9", "13", "15", "17", "19", "21", "2", "4", "18", "20", "11", "3", "6", "8", "12", "14", "16", "10", "22", "25", "24", "23"];
+                    $valoreDispari = ["1", "0", "5", "7", "9", "13", "15", "17", "19", "21", "2", "4", "18", "20", "11", "3", "6", "8", "12", "14", "16", "10", "22", "25", "24", "23", "1", "0", "5", "7", "9", "13", "15", "17", "19", "21"];
                     $somma = 0;
                     
                     for ($i = 0; $i < strlen($cfCreato); $i++) {
                         if ($i % 2 == 0) {
-                            $posizione = in_array($cfCreato[$i], $lettere);
+                            $posizione = array_search($cfCreato[$i], $lettere);
                             $somma += $valorePari[$posizione];
+                            echo $somma. " ";
                         } else {
-                            $posizione = in_array($cfCreato[$i], $lettere);
+                            $posizione = array_search($cfCreato[$i], $lettere);
                             $somma += $valoreDispari[$posizione];
+                            echo $somma. " ";
                         }
+                        
                     }
-                    $somma = $somma % 26;
-                    $somma = $lettere[$somma];
-                    $cfCreato .= $somma;
+                    $resto = $somma % 26;
+
+
+                    $cfCreato .= $lettere[$resto];
                     echo $cfCreato; 
 
                     if ($cfCreato == $CF) {
-                        echo "Il codice fiscale è corretto";
+                        echo "<br>Il codice fiscale è corretto";
                     } else {
-                        echo "Il codice fiscale è errato";
+                        echo "<br>Il codice fiscale è errato";
                     }
 
 
