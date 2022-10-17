@@ -137,7 +137,12 @@
                     } elseif (substr($born, 5, 2) == "12") {
                         $cfCreato .= "T";
                     }
-                    $cfCreato .= substr($born, 8, 2);
+                    if ($sesso == "M") {
+                        $cfCreato .= substr($born, 8, 2);
+                    } else {
+                        $int_val = intval(substr($born, 8, 2)) + 40;
+                        $cfCreato .= $int_val;
+                    }
 
                     $row = 1;
                     if (($handle = fopen("CodiciCatastali.csv", "r")) !== FALSE) {
