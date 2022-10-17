@@ -85,14 +85,19 @@
                         }
                     }
 
-
-
-                    if (strlen($ConsonantNome) < 3) {
-                         $ConsonantNome .= $VocalNome[0];
-                    }
-
                     $cfCreato .= substr($ConsonantCognome, 0, 3);
-                    $cfCreato .= substr($ConsonantNome, 0, 3);
+
+                    if (strlen($ConsonantNome) == 3) {
+                        $cfCreato .= substr($ConsonantNome, 0, 3);
+                    } else if (strlen($ConsonantNome) == 2) {
+                        $cfCreato .= $VocalNome[0];
+                    } else if (strlen($ConsonantNome) == 1) {
+                        $cfCreato .= $VocalNome[0] . $VocalNome[1];
+                    } else if (strlen($ConsonantNome) == 0) {
+                        $cfCreato .= $VocalNome[0] . $VocalNome[1] . $VocalNome[2];
+                    } else if (strlen($ConsonantNome) > 3) {
+                        $cfCreato .= $ConsonantNome[0]. $ConsonantNome[2]. $ConsonantNome[3];
+                    }
                     $cfCreato .= substr($born, 2, 2);
 
                     if (substr($born, 5, 2) == "01") {
@@ -149,11 +154,9 @@
                         if ($i % 2 == 0) {
                             $posizione = array_search($cfCreato[$i], $lettere);
                             $somma += $valorePari[$posizione];
-                            echo $somma. " ";
                         } else {
                             $posizione = array_search($cfCreato[$i], $lettere);
                             $somma += $valoreDispari[$posizione];
-                            echo $somma. " ";
                         }
                         
                     }
