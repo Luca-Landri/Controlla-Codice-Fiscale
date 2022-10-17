@@ -32,8 +32,19 @@
             </div>
     
             <div class="data">
-                <label for="CF">Data di nascita</label>
-                <input require type="date" name="born" id="born">
+                <div class="row">
+                    <div class="col">
+                        <label for="CF">Data di nascita</label>
+                        <input require type="date" name="born" id="born">
+                    </div>
+                    <div class="col">
+                        <label for="Sesso">Sesso</label>
+                        <select name="Sesso" id="Sesso">
+                            <option value="M">M</option>
+                            <option value="F">F</option>
+                        </select>
+                    </div>
+                </div>
             </div>
     
             <div class="data">
@@ -56,13 +67,14 @@
                 $CF = str_replace(" ", "", $CF);
                 $CF = str_replace("À", "A", $CF);
                 $cfCreato = "";
+                $sesso = $_POST["Sesso"];
 
                 $ConsonantCognome = "";
                 $ConsonantNome = "";
                 $VocalCognome = "";
                 $VocalNome = "";
 
-                if (strlen($CF) !== 16 || $Nome == "" || $Cognome == "" || $Luogo == "" || $born == "") {
+                if (strlen($CF) !== 16 || $Nome == "" || $Cognome == "" || $Luogo == "" || $born == "" || $CF == "" || $sesso == "") {
                     echo "Ci sono alcuni dati mancanti";
 
                 } else {
