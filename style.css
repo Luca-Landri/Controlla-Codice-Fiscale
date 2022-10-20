@@ -15,20 +15,35 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
 }
 
 form {
-    background-color:green;
+    background-color: #fff;
     padding: 20px 40px;
     border-radius: 10px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: -0.031210435554385185px 0.7868812680244446px 2.7171874046325684px 0px #3326AE0B;
+    box-shadow: -0.14267627894878387px 3.5971715450286865px 7.637499809265137px 0px #3326AE11;
+    box-shadow: -0.3611493408679962px 9.105340957641602px 20.489063262939453px 0px #3326AE16;
+    box-shadow: -0.7133814096450806px 17.985858917236328px 47px 0px #3326AE21;
+
 }
 
 .data {
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
+}
+
+.data .calcola {
+    background: hsla(273, 60%, 22%, 1);
+    background: linear-gradient(135deg, hsla(273, 60%, 22%, 1) 0%, hsla(17, 60%, 52%, 1) 100%);
+    background: -moz-linear-gradient(135deg, hsla(273, 60%, 22%, 1) 0%, hsla(17, 60%, 52%, 1) 100%);
+    background: -webkit-linear-gradient(135deg, hsla(273, 60%, 22%, 1) 0%, hsla(17, 60%, 52%, 1) 100%);
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    font-size: 15px;
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#3C175B", endColorstr="#CE653B", GradientType=1 );
 }
 
 input {
@@ -38,7 +53,7 @@ input {
 }
 
 h1 {
-    color: white;
+    color: black;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -46,8 +61,8 @@ h1 {
 }
 
 label {
-    font-weight: 500;
-    color: white;
+    font-weight: 600;
+    color: black;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -88,4 +103,41 @@ select {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h4 {
+    color: black;
+    margin-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+}
+
+.header button a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: hsla(273, 60%, 22%, 1);
+    background: linear-gradient(135deg, hsla(273, 60%, 22%, 1) 0%, hsla(17, 60%, 52%, 1) 100%);
+    background: -moz-linear-gradient(135deg, hsla(273, 60%, 22%, 1) 0%, hsla(17, 60%, 52%, 1) 100%);
+    background: -webkit-linear-gradient(135deg, hsla(273, 60%, 22%, 1) 0%, hsla(17, 60%, 52%, 1) 100%);
+    color: white;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header button:hover {
+    color: #fff;
 }
