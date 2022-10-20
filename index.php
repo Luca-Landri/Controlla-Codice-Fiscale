@@ -58,7 +58,7 @@
                 <label for="CF">Codice Fiscale</label>
                 <input require type="text" name="CF" id="CF">
             </div>
-            <div class="data">
+            <div class="button">
                 <input class="calcola" type="submit" value="CONTROLLA">
             </div>    
         </form>
@@ -140,37 +140,37 @@
                         } else if (strlen($ConsonantNome) > 3) {
                             $cfCreato .= $ConsonantNome[0]. $ConsonantNome[2]. $ConsonantNome[3];
                         }
-                        $cfCreato .= substr($born, 2, 2);
+                        $cfCreato .= substr($born, 8, 2);
 
                         if (substr($born, 5, 2) == "01") {
                             $cfCreato .= "A";
-                        } elseif (substr($born, 5, 2) == "02") {
+                        } elseif (substr($born, 3, 2) == "02") {
                             $cfCreato .= "B";
-                        } elseif (substr($born, 5, 2) == "03") {
+                        } elseif (substr($born, 3, 2) == "03") {
                             $cfCreato .= "C";
-                        } elseif (substr($born, 5, 2) == "04") {
+                        } elseif (substr($born, 3, 2) == "04") {
                             $cfCreato .= "D";
-                        } elseif (substr($born, 5, 2) == "05") {
+                        } elseif (substr($born, 3, 2) == "05") {
                             $cfCreato .= "E";
-                        } elseif (substr($born, 5, 2) == "06") {
+                        } elseif (substr($born, 3, 2) == "06") {
                             $cfCreato .= "H";
-                        } elseif (substr($born, 5, 2) == "07") {
+                        } elseif (substr($born, 3, 2) == "07") {
                             $cfCreato .= "L";
-                        } elseif (substr($born, 5, 2) == "08") {
+                        } elseif (substr($born, 3, 2) == "08") {
                             $cfCreato .= "M";
-                        } elseif (substr($born, 5, 2) == "09") {
+                        } elseif (substr($born, 3, 2) == "09") {
                             $cfCreato .= "P";
-                        } elseif (substr($born, 5, 2) == "10") {
+                        } elseif (substr($born, 3, 2) == "10") {
                             $cfCreato .= "R";
-                        } elseif (substr($born, 5, 2) == "11") {
+                        } elseif (substr($born, 3, 2) == "11") {
                             $cfCreato .= "S";
-                        } elseif (substr($born, 5, 2) == "12") {
+                        } elseif (substr($born, 3, 2) == "12") {
                             $cfCreato .= "T";
                         }
                         if ($sesso == "M") {
-                            $cfCreato .= substr($born, 8, 2);
+                            $cfCreato .= substr($born, 0, 2);
                         } else {
-                            $int_val = intval(substr($born, 8, 2)) + 40;
+                            $int_val = intval(substr($born, 0, 2)) + 40;
                             $cfCreato .= $int_val;
                         }
 
@@ -192,9 +192,11 @@
                             fclose($handle);
                         }
 
-                        $lettere = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-                        $valorePari = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-                        $valoreDispari = ["1", "0", "5", "7", "9", "13", "15", "17", "19", "21", "2", "4", "18", "20", "11", "3", "6", "8", "12", "14", "16", "10", "22", "25", "24", "23", "1", "0", "5", "7", "9", "13", "15", "17", "19", "21"];
+                        $somma=0;
+
+                        $lettere = ['A', 'B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','0','1','2','3','4','5','6','7','8','9'];
+                        $valorePari = [1,0,5,7,9,13,15,17,19,21,2,4,18,20,11,3,6,8,12,14,16,10,22,25,24,23,1,0,5,7,9,13,15,17,19,21];
+                        $valoreDispari = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,0,1,2,3,4,5,6,7,8,9];
                         $somma = 0;
                         
                         for ($i = 0; $i < strlen($cfCreato); $i++) {
