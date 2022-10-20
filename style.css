@@ -141,3 +141,25 @@ h4 {
 .header button:hover {
     color: #fff;
 }
+
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: -0.031210435554385185px 0.7868812680244446px 2.7171874046325684px 0px #3326ae0b;
+}
+
+.errato {
+    color: red;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+}
+
+.corretto {
+    color: green;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+}

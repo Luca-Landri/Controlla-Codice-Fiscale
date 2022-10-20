@@ -191,9 +191,9 @@
                     echo $cfCreato; 
 
                     if ($cfCreato == $CF) {
-                        echo "<br>Il codice fiscale è corretto";
+                        echo '<div class="corretto">Il codice fiscale è corretto</div>';
                     } else {
-                        echo "<br>Il codice fiscale è errato";
+                        echo '<div class="errato">Il codice fiscale è errato</div>';
                     }
 
 
