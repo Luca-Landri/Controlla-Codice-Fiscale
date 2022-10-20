@@ -19,7 +19,8 @@
 
 form {
     background-color: #fff;
-    padding: 20px 40px;
+    width: 40vw;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: -0.031210435554385185px 0.7868812680244446px 2.7171874046325684px 0px #3326AE0B;
     box-shadow: -0.14267627894878387px 3.5971715450286865px 7.637499809265137px 0px #3326AE11;
@@ -34,7 +35,14 @@ form {
     flex-direction: column;
 }
 
-.data .calcola {
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.button .calcola {
     background: hsla(273, 60%, 22%, 1);
     background: linear-gradient(135deg, hsla(273, 60%, 22%, 1) 0%, hsla(17, 60%, 52%, 1) 100%);
     background: -moz-linear-gradient(135deg, hsla(273, 60%, 22%, 1) 0%, hsla(17, 60%, 52%, 1) 100%);
@@ -43,6 +51,7 @@ form {
     border: none;
     font-weight: 700;
     font-size: 15px;
+    width: 50%;
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#3C175B", endColorstr="#CE653B", GradientType=1 );
 }
 
