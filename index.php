@@ -11,10 +11,17 @@
 <body>
     <div class="container">
         <form action="/Index.php" method="post">
-            <div class="title">
-                <img src="./Assets/Italy.png" alt="">
-                <h1>Calcola CF</h1>
+            <div class="header">
+                <div class="title">
+                    <img src="./Assets/Italy.png" alt="logo italia 🗿">
+                    <h1>Controlla CF</h1>
+                </div>
+                <div>
+                    <h4>O</h4>
+                </div>
+                <button><a href="./Calcola.php">CALCOLANE UNO</a></button>
             </div>
+
     
             <div class="data">
                 <label for="CF">Nome</label>
@@ -52,7 +59,7 @@
                 <input require type="text" name="CF" id="CF">
             </div>
             <div class="data">
-                <input type="submit" value="Calcola">
+                <input class="calcola" type="submit" value="CONTROLLA">
             </div>    
         </form>
 
