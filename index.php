@@ -213,7 +213,6 @@
 
 
                         $cfCreato .= $lettere[$resto];
-                        echo $cfCreato; 
 
                         if ($cfCreato == $CF) {
                             echo '<div class="corretto">Il codice fiscale è corretto</div>';
