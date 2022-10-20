@@ -67,7 +67,19 @@
             <?php
             if (isset($_POST["Nome"]) && isset($_POST["Cognome"]) && isset($_POST["Luogo"]) && isset($_POST["born"]) && isset($_POST["CF"])) {
                 $Nome = trim(strtoupper($_POST["Nome"]));
+                $Nome = str_replace(" ", "", $Nome);
+                $Nome = str_replace("À", "A", $Nome);
+                $Nome = str_replace("È", "E", $Nome);
+                $Nome = str_replace("Ì", "I", $Nome);
+                $Nome = str_replace("Ò", "O", $Nome);
+                $Nome = str_replace("Ù", "U", $Nome);
                 $Cognome = trim(strtoupper($_POST["Cognome"]));
+                $Cognome = str_replace(" ", "", $Cognome);
+                $Cognome = str_replace("À", "A", $Cognome);
+                $Cognome = str_replace("È", "E", $Cognome);
+                $Cognome = str_replace("Ì", "I", $Cognome);
+                $Cognome = str_replace("Ò", "O", $Cognome);
+                $Cognome = str_replace("Ù", "U", $Cognome);
                 $Luogo = trim(ucfirst($_POST["Luogo"]));
                 $born = $_POST["born"];
                 $CF = trim(strtoupper($_POST["CF"]));
